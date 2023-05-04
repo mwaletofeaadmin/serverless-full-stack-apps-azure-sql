@@ -1,0 +1,11 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=false;",
+        "AzureWebJobsSecretStorageType": "files",
+        "FUNCTIONS_WORKER_RUNTIME": "python",
+        "RealTimeFeedUrl": "https://s3.amazonaws.com/kcm-alerts-realtime-prod/vehiclepositions_enhanced.json",
+        "LogicAppUrl": "",
+        "AzureSQLConnectionString": "Driver={ODBC Driver 17 for SQL Server};Server=tcp:bus-server883436.database.windows.net,1433;Database=bus-db;Uid=cloudadmin;Pwd=Psalm16:11;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+    }
+}
