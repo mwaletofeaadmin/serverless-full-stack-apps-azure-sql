@@ -14,7 +14,7 @@ env:
   AZURE_FUNCTIONAPP_NAME: azfunc325322 # set this to your application's name
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'azure-function/python'   # set this to the path to your web app project, defaults to the repository root
   PYTHON_VERSION: '3.9'                 # set this to the python version to use (supports 3.9)
-  AZURE_FUCTIONAPP_PUBLISH_PROFILE: ""
+  AZURE_FUNCTIONAPP_PUBLISH_PROFILE: ""
 
 jobs:
   build-and-deploy:
