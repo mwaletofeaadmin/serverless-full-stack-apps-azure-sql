@@ -14,7 +14,7 @@ env:
   AZURE_FUNCTIONAPP_NAME: azfunc325322 # set this to your application's name
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'azure-function/python'   # set this to the path to your web app project, defaults to the repository root
   PYTHON_VERSION: '3.9'                 # set this to the python version to use (supports 3.9)
-  AZURE_FUNCTIONAPP_PUBLISH_PROFILE: ""
+  AZURE_FUNCTIONAPP_PUBLISH_PROFILE: '<publishData><publishProfile profileName="azfunc325322 - Web Deploy" publishMethod="MSDeploy" publishUrl="azfunc325322.scm.azurewebsites.net:443" msdeploySite="azfunc325322" userName="$azfunc325322" userPWD="9NjhoxJAzYvjdkC0NLPHK1TooPGyBxGusD6m2mkRRBftvKj3WMsjkcx6NbGr" destinationAppUrl="http://azfunc325322.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites"><databases /></publishProfile><publishProfile profileName="azfunc325322 - FTP" publishMethod="FTP" publishUrl="ftps://waws-prod-bay-081.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="azfunc325322\$azfunc325322" userPWD="9NjhoxJAzYvjdkC0NLPHK1TooPGyBxGusD6m2mkRRBftvKj3WMsjkcx6NbGr" destinationAppUrl="http://azfunc325322.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites"><databases /></publishProfile><publishProfile profileName="azfunc325322 - Zip Deploy" publishMethod="ZipDeploy" publishUrl="azfunc325322.scm.azurewebsites.net:443" userName="$azfunc325322" userPWD="9NjhoxJAzYvjdkC0NLPHK1TooPGyBxGusD6m2mkRRBftvKj3WMsjkcx6NbGr" destinationAppUrl="http://azfunc325322.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites"><databases /></publishProfile><publishProfile profileName="azfunc325322 - ReadOnly - FTP" publishMethod="FTP" publishUrl="ftps://waws-prod-bay-081dr.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="azfunc325322\$azfunc325322" userPWD="9NjhoxJAzYvjdkC0NLPHK1TooPGyBxGusD6m2mkRRBftvKj3WMsjkcx6NbGr" destinationAppUrl="http://azfunc325322.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites"><databases /></publishProfile></publishData>'
 
 jobs:
   build-and-deploy:
@@ -43,6 +43,6 @@ jobs:
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        publish-profile: ${{ env.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
 
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
