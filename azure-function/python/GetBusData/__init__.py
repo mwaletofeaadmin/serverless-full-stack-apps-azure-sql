@@ -21,10 +21,11 @@ AZURE_CONN_STRING: str = os.environ["AzureSQLConnectionString"]
 GTFS_REAL_TIME_FEED: str = os.environ["RealTimeFeedUrl"]
 LOGIC_APP_URL: str = os.environ.get("LogicAppUrl", "")
 
+logging.info(AZURE_CONN_STRING)
 
 def main(GetBusData: func.TimerRequest) -> None:
     """Retrieve the routes we want to monitor from the SQL Database"""
-    conn: str = pyodbc.connect(AZURE_CONN_STRING)
+    conn = pyodbc.connect(AZURE_CONN_STRING)
     monitored_routes: list[int] = get_monitored_routes(conn)
     logging.info(f"{len(monitored_routes)} routes to check against")
     entities = get_bus_data_from_feed(GTFS_REAL_TIME_FEED)['entity']
